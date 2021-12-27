@@ -9,8 +9,9 @@ for i in tqdm(configs):
 	for j in runs:
 			configDir = 'configs/' + i + '/' + i + j + '.yaml'
 		 
-			currCall = 'python train.py -d -c ' + configDir
-			
-			os.system(currCall)
+			currTrainCall = 'python train.py -d -c ' + configDir
+			currTestCall = 'python test.py -d -c ' + configDir
+			os.system(currTrainCall)
+			os.system(currTestCall)			
 
 print('completed')	
