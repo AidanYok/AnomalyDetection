@@ -111,7 +111,7 @@ def list_to_vector_array(file_list,
                                                 downsample=downsample)
         if idx == 0:
             if downsample:
-                dataset = numpy.zeros((vector_array.shape[0] * len(file_list), mels*frames), float)
+                dataset = numpy.zeros((vector_array.shape[0] * len(file_list), 128), float)
             else:
                 dataset = numpy.zeros((vector_array.shape[0] * len(file_list), dims), float)
         dataset[vector_array.shape[0] * idx: vector_array.shape[0] * (idx + 1), :] = vector_array
