@@ -21,13 +21,13 @@ train:
       input_dim: 128
       batch_norm: true
       latent_dim: 8
-      hidden_dim: 128
+      hidden_dim: 64
       l1reg: 0
       name: qkeras_model
       encode_depth: 2
-      encode_in: 128
+      encode_in: 64
       decode_depth: 2
-      decode_out: 128
+      decode_out: 64
       quantization:
           bits: 8
           int_bits: 0
