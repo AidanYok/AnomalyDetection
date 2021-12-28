@@ -26,7 +26,7 @@ train:
       name: qkeras_model
       encode_depth: 2
       encode_in: 128
-      decode_depth: 4
+      decode_depth: 2
       decode_out: 128
       quantization:
           bits: 10
@@ -44,8 +44,8 @@ train:
       sparsity: None
       initial_sparsity: None
       final_sparsity: None
-  model_directory: .config/10bits/modelTwo/
-  result_directory: .config/10bits/resultTwo/
+  model_directory: config/10bits/modelTwo/
+  result_directory: config/10bits/resultTwo/
   result_file: result.csv
 convert:
   x_npy_plot_roc: test_data/anomaly_detection/downsampled_128_5_to_32_4_skip_method.npy
