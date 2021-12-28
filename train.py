@@ -263,12 +263,10 @@ if __name__ == "__main__":
                                       cooldown=4, min_lr=1e-5)
         tensorboard = TensorBoard(log_dir = 'tensorboard_logs/{}'.format(target_dir.split('/'))[-1])
         
-        # prune_summary = PruningSummaries(log_dir='tensorboard_logs/{}'.format(param["result_directory"].split('/')[-1]), update_freq='epoch')
         callbacks=[
             modelbestcheck,
             stopping,
             reduce_lr,
-            prune_summary,
         ]
         if param["pruning"]["constant"] or param["pruning"]["decay"]:
             callbacks.append(pruning_callbacks.UpdatePruningStep())
@@ -287,9 +285,7 @@ if __name__ == "__main__":
                             callbacks=callbacks)
 
         # Save the model again but with the pruning 'stripped' to use the regular layer types
-        if param["pruning"]["constant"] or param["pruning"]["decay"]:
-            model = strip_pruning(model)
-            model.save(model_file_path)
+        model.save(model_file_path)
             
         visualizer.loss_plot(history.history["loss"], history.history["val_loss"])
         visualizer.save_figure(history_img)
