@@ -20,7 +20,7 @@ runs = ['One', 'Two', 'Three']
 
 for i in tqdm(configs):
 	for j in runs:
-		configDir = 'configs/' + i + '/' + i + j + '.yaml'
+		configDir = 'config/' + i + '/' + i + j + '.yaml'
 
 		currTrainCall = 'python train.py -c ' + configDir
 		currTestCall = 'python test.py -c ' + configDir
