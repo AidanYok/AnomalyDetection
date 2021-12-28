@@ -32,7 +32,7 @@ train:
           bits: 11
           int_bits: 0
           last_bits: 11
-          last_int_bits: 11
+          last_int_bits: 0
           relu_bits: 5
           relu_int_bits: 5
   pruning:
